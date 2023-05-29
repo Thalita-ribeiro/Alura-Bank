@@ -1,9 +1,9 @@
-package com.alura.alurabank;
+package com.alura.alurabank.dominio;
 
 import lombok.Getter;
 
 @Getter
 public class AccountHolder { //Correntista
-    private String nome;
+    private String name;
     private String cpf;
 }
