@@ -1,2 +1,6 @@
-package com.alura.alurabank.dominio;public class Operation {
+package com.alura.alurabank.dominio;
+
+public enum Operation {
+    WITHDRAWAL,
+    DEPOSIT
 }
