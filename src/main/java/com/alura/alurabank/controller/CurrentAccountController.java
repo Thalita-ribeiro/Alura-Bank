@@ -1,6 +1,7 @@
 package com.alura.alurabank.controller;
 
 import com.alura.alurabank.dominio.AccountHolder;
+import com.alura.alurabank.dominio.AccountTransaction;
 import com.alura.alurabank.dominio.CurrentAccount;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @RequestMapping("/accounts")
@@ -27,5 +29,10 @@ public class CurrentAccountController {
     public ResponseEntity<CurrentAccount> createNewAccount(@RequestBody AccountHolder accountHolder) {
         CurrentAccount account = new CurrentAccount("111", "2222", "700");
         return ResponseEntity.status(HttpStatus.CREATED).body(account);
+    }
+
+    @PutMapping
+    public ResponseEntity<AccountTransaction> manageAnAccount(@RequestBody AccountTransaction accountTransaction) {
+        return ResponseEntity.ok(accountTransaction);
     }
 }
